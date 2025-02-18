@@ -1,5 +1,5 @@
-import { styled } from "styled-components"
-import ItemNavegacao from "./ItemNavegacao"
+import { styled } from "styled-components";
+import ItemNavegacao from "./ItemNavegacao";
 
 const ListaEstilizada = styled.ul`
     list-style: none;
@@ -50,4 +50,4 @@ const BarraLateral = () => {
     )
 }
 
-export default BarraLateral
+export default BarraLateral;

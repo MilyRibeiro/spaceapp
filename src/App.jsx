@@ -35,7 +35,6 @@ const ConteudoGaleria = styled.section`
 
 const App = () => {
   const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos);
-  // const [fotoSelecionada, setFotoSelecionada] = useState(null);
   const [filtro, setFiltro] = useState('');
   const [tag, setTag] = useState(0);
   const [fotoComZoom, setFotoComZoom] = useState(null);
@@ -51,14 +50,6 @@ const App = () => {
   }, [filtro, tag]);
 
   const aoAlternarFavorito = (foto) => {
-      // if (foto.id === fotoSelecionada?.id) {
-      //   setFotoSelecionada({
-      //     ...fotoSelecionada,
-      //     favorita: !fotoSelecionada.favorita
-      //   })
-        
-      // }
-
       if(foto.id === fotoComZoom?.id) {
         setFotoComZoom({
           ...fotoComZoom,
@@ -96,9 +87,7 @@ const App = () => {
         </MainContainer>
       </AppContainer>
       <ModalZoom 
-        // foto={fotoSelecionada}
         foto={fotoComZoom}
-        // aoFechar={() => setFotoSelecionada(null)}
         aoFechar={() => setFotoComZoom(null)}
         aoAlternarFavorito={aoAlternarFavorito}
       />

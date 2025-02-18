@@ -1,4 +1,4 @@
-import { styled } from "styled-components"
+import { styled } from "styled-components";
 
 const ItemListaEstilizado = styled.li`
     font-size: 24px;
@@ -19,4 +19,4 @@ const ItemNavegacao = ({children, iconeAtivo, iconeInativo, ativo = false}) => {
     </ItemListaEstilizado>
 }
 
-export default ItemNavegacao
+export default ItemNavegacao;

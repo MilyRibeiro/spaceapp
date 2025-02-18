@@ -1,5 +1,5 @@
-import { styled } from "styled-components"
-import BotaoIcone from "../../BotaoIcone"
+import { styled } from "styled-components";
+import BotaoIcone from "../../BotaoIcone";
 
 const Figure = styled.figure`
     width: ${props => props.$expandida ? '90%' : '460px'};
@@ -39,13 +39,13 @@ const Rodape = styled.footer`
 const Imagem = ({ foto, expandida = false, aoZoomSolicitado, aoAlternarFavorito }) => {
     const iconeFavorito = foto.favorita ? "./icones/favorito-ativo.png" : "./icones/favorito.png";
 
+    // Por curiosidade, nós poderíamos fazer de outra forma para ficar clara a nossa intenção. Vamos dizer que, por padrão, o ícone favorito será o coração vazio, que é o arquivo favorito.png.
+    //E, poderíamos fazer o seguinte: se (if()) a foto é favorita, transforma essa string no ícone ativo.
     // let iconeFavorito = '/icones/favorito.png';
     // if (foto.favorita) {
     //     iconeFavorito = '/icones/favorito-ativo.png'
     // }
-    // Por curiosidade, nós poderíamos fazer algo assim: vamos comentar este trecho de código com iconeFavorito e fazer de outra forma para ficar clara a nossa intenção. Vamos dizer que, por padrão, o ícone favorito será o coração vazio, que é o arquivo favorito.png.
-    //E, poderíamos fazer o seguinte: se (if()) a foto é favorita, transforma essa string no ícone ativo.
-
+    
     return (
         <Figure $expandida={expandida} id={`foto-${foto.id}`}>
                 <img src={foto.path} alt={foto.alt} />
