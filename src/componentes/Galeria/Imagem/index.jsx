@@ -36,22 +36,33 @@ const Rodape = styled.footer`
     align-items: center;
 `
 
-const Imagem = ({ foto, expandida = false, aoZoomSolicitado }) => {
-    return (<Figure $expandida={expandida} id={`foto-${foto.id}`}>
-        <img src={foto.path} alt={foto.alt} />
-        <figcaption>
-            <h3>{foto.titulo}</h3>
-            <Rodape>
-                <h4>{foto.fonte}</h4>
-                <BotaoIcone>
-                    <img src="/icones/favorito.png" alt="Icone de favorito" />
-                </BotaoIcone>
-                {!expandida && <BotaoIcone aria-hidden={expandida} onClick={() => aoZoomSolicitado(foto)}>
-                    <img src="/icones/expandir.png" alt="Icone de expandir" />
-                </BotaoIcone>}
-            </Rodape>
-        </figcaption>
-    </Figure>)
+const Imagem = ({ foto, expandida = false, aoZoomSolicitado, aoAlternarFavorito }) => {
+    const iconeFavorito = foto.favorita ? "./icones/favorito-ativo.png" : "./icones/favorito.png";
+
+    // let iconeFavorito = '/icones/favorito.png';
+    // if (foto.favorita) {
+    //     iconeFavorito = '/icones/favorito-ativo.png'
+    // }
+    // Por curiosidade, nós poderíamos fazer algo assim: vamos comentar este trecho de código com iconeFavorito e fazer de outra forma para ficar clara a nossa intenção. Vamos dizer que, por padrão, o ícone favorito será o coração vazio, que é o arquivo favorito.png.
+    //E, poderíamos fazer o seguinte: se (if()) a foto é favorita, transforma essa string no ícone ativo.
+
+    return (
+        <Figure $expandida={expandida} id={`foto-${foto.id}`}>
+                <img src={foto.path} alt={foto.alt} />
+                <figcaption>
+                    <h3>{foto.titulo}</h3>
+                    <Rodape>
+                        <h4>{foto.fonte}</h4>
+                        <BotaoIcone onClick={() => aoAlternarFavorito(foto)}>
+                            <img src={iconeFavorito} alt="Icone de favorito" />
+                        </BotaoIcone>
+                        {!expandida && <BotaoIcone aria-hidden={expandida} onClick={() => aoZoomSolicitado(foto)}>
+                            <img src="./icones/expandir.png" alt="Icone de expandir" />
+                        </BotaoIcone>}
+                    </Rodape>
+                </figcaption>
+        </Figure>
+    )
 }
 
-export default Imagem
+export default Imagem;
