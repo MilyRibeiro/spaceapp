@@ -1,6 +1,7 @@
-import styled from "styled-components";
-import Titulo from "../../Titulo";
-import fotos from "./fotos-populares.json";
+import { styled } from "styled-components"
+import Titulo from "../../Titulo"
+
+import fotos from './fotos-populares.json'
 
 const ColunaFotos = styled.section`
     display: flex;
@@ -15,15 +16,16 @@ const Imagem = styled.img`
 
 const Botao = styled.button`
     background-color: transparent;
-    color: #FFF;
-    border: 2px solid #C98CF1;
+    color: #fff;
+    border: 2px solid;
+    border-color: #C98CF1;
     padding: 12px 20px;
     font-size: 20px;
     border-radius: 10px;
     cursor: pointer;
     width: 100%;
     margin-top: 16px;
-`
+`;
 
 const Populares = () => {
     return (
@@ -37,4 +39,4 @@ const Populares = () => {
     )
 }
 
-export default Populares;
+export default Populares

@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import tags from './arquivos-json/tags.json';
+import tags from './tags.json'
 
 const TagsContainer = styled.section`
     display: flex;
@@ -44,4 +44,4 @@ const Tags = () => {
     </TagsContainer>
 }
 
-export default Tags;
+export default Tags
