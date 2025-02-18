@@ -13,16 +13,6 @@ const BarraLateral = () => {
         <aside>
             <nav>
                 <ListaEstilizada>
-                    {/* <li>
-                        <a href="#">Início</a>
-                    </li>
-                    <li>
-                        <a href="#">Mais visitas</a>
-                    </li>
-                    <li>
-                        <a href="#">Mais curtidas</a>
-                    </li> */}
-
                     <ItemNavegacao  
                         iconeAtivo="./icones/home-ativo.png" 
                         iconeInativo="./icones/home-inativo.png"
@@ -52,6 +42,14 @@ const BarraLateral = () => {
                         ativo={true}
                     >
                         Novas
+                    </ItemNavegacao>
+
+                    <ItemNavegacao  
+                        iconeAtivo="./icones/surpreenda-me-ativo.png" 
+                        iconeInativo="./icones/surpreenda-me-inativo.png"
+                        ativo={true}
+                    >
+                        Surpreenda-me
                     </ItemNavegacao>
                 </ListaEstilizada>
             </nav>
