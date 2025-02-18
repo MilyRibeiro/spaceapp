@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
-import tags from './tags.json'
+import tags from './tags.json';
 
-const TagsContainer = styled.section`
+const BarraTags = styled.section`
     display: flex;
     align-items: center;
     gap: 64px;
@@ -35,13 +35,15 @@ const Div = styled.div`
     justify-content: end;
 `
 
-const Tags = () => {
-    return <TagsContainer>
-        <TagTitulo>Busque por tags:</TagTitulo>
-        <Div>
-            {tags.map(tag => <Tag key={tag.id}>{tag.titulo}</Tag>)}
-        </Div>
-    </TagsContainer>
+const Tags = ({ setTag }) => {
+    return (
+        <BarraTags>
+            <TagTitulo>Busque por tags:</TagTitulo>
+            <Div>
+                {tags.map(tag => <Tag key={tag.id} onClick={() => setTag(tag.tag)}>{tag.titulo}</Tag>)}
+            </Div>
+        </BarraTags>
+    )
 }
 
-export default Tags
+export default Tags;
